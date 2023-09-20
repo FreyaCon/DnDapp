@@ -1,11 +1,17 @@
+import React from "react";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import ChooseRace from "./pages/ChooseRace";
 import './App.css';
-import StartPage from './pages/start-page';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-     <StartPage/>
-    </div>
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<HomePage/>} />
+        <Route path="/choose-race" element={<ChooseRace/>} />
+      </Routes>
+    </Router>
   );
 }
 
