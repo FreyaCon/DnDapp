@@ -3,7 +3,6 @@ import DragonbornSelection from "../RaceSpecifics/DragonbornSelection";
 import GnomeSelection from "../RaceSpecifics/GnomeSelection";
 import DwarfSelection from "../RaceSpecifics/DwarfSelection";
 import ElfSelection from "../RaceSpecifics/ElfSelection";
-import { Link } from "react-router-dom";
 
 const ChooseRace = () => {
   const races = ["Dwarf", "Tiefling", "Elf", "Halfling", "Half-Orc", "Dragonborn", "Gnome", "Human", "Half-Human"];
@@ -27,6 +26,7 @@ const ChooseRace = () => {
     checkContinueButtonStatus();
   };
 
+  
   const checkContinueButtonStatus = () => {
     // Enable the "Continue" button if both ancestry and class are selected
     if (selectedAncestor && selectedClass) {
@@ -78,9 +78,9 @@ const ChooseRace = () => {
       </div>
 
       {continueEnabled && (
-        <Link to="/choose-class" className="start-button">
-        continue
-        </Link>
+        <button className="continue-button">
+          Continue
+        </button>
       )}
 
     </div>
